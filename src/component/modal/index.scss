@@ -7,6 +7,17 @@
   }
 }
 
+@keyframes modal-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .modal-background {
   position: fixed;
   top: 0;
@@ -25,9 +36,7 @@
 
   > .modal {
     background-color: var(--light-color);
-    animation-name: modal-fade-in;
-    animation-duration: 0.5s;
-    opacity: 1;
+    animation: modal-slide-up 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s backwards;
     border-radius: 4px;
     box-shadow: 0 4px 20px rgba(61, 57, 41, 0.12);
 

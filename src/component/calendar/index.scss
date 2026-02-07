@@ -33,14 +33,15 @@
         > div.heart {
           width: 70%;
           height: 70%;
-          background: var(--theme-color);
+          background: linear-gradient(135deg, var(--theme-color), var(--accent-green-dark));
           top: 15%;
           left: 15%;
           position: absolute;
           border-radius: 50%;
           transform: none;
           z-index: 0;
-          opacity: 0.85;
+          opacity: 1;
+          box-shadow: 0 0 0 3px rgba(125, 142, 110, 0.2);
           &::before {
             display: none;
           }

@@ -18,6 +18,11 @@ button.button {
     color: var(--alt-color);
     border-radius: 2px;
     padding: 0.5rem 1rem;
+
+    &:hover {
+      background-color: var(--theme-bg-color);
+      border-color: var(--theme-color);
+    }
   }
 
   &.button-style-2 {
@@ -26,5 +31,9 @@ button.button {
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 2px;
+
+    &:hover {
+      background-color: var(--accent-green-dark);
+    }
   }
 }
