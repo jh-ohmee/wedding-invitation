@@ -4,12 +4,19 @@ button.button {
   position: relative;
   z-index: 3;
   font-size: 1rem;
+  letter-spacing: 0.05em;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+  border-radius: 2px;
+
+  &:active {
+    opacity: 0.7;
+  }
 
   &.button-style-1 {
     background-color: var(--white-color);
     border: solid 0.05rem var(--alt-color);
     color: var(--alt-color);
-    border-radius: 0.3rem;
+    border-radius: 2px;
     padding: 0.5rem 1rem;
   }
 
@@ -18,5 +25,6 @@ button.button {
     color: var(--white-color);
     border: none;
     padding: 0.5rem 1rem;
+    border-radius: 2px;
   }
 }

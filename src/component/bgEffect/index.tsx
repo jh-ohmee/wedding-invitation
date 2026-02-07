@@ -1,13 +1,13 @@
 import { useEffect, useRef } from "react"
 import patelUrl from "../../icons/petal.png"
 
-const X_SPEED = 0.6
-const X_SPEED_VARIANCE = 0.8
+const X_SPEED = 0.2
+const X_SPEED_VARIANCE = 0.3
 
-const Y_SPEED = 0.4
-const Y_SPEED_VARIANCE = 0.4
+const Y_SPEED = 0.15
+const Y_SPEED_VARIANCE = 0.15
 
-const FLIP_SPEED_VARIANCE = 0.02
+const FLIP_SPEED_VARIANCE = 0.01
 
 // Petal class
 class Petal {
@@ -35,7 +35,7 @@ class Petal {
   initialize() {
     this.w = 25 + Math.random() * 15
     this.h = 20 + Math.random() * 10
-    this.opacity = this.w / 80
+    this.opacity = this.w / 160
     this.flip = Math.random()
 
     this.xSpeed = X_SPEED + Math.random() * X_SPEED_VARIANCE
@@ -94,7 +94,7 @@ export const BGEffect = () => {
     petalImg.src = patelUrl
 
     const getPetalNum = () => {
-      return Math.floor((window.innerWidth * window.innerHeight) / 30000)
+      return Math.floor((window.innerWidth * window.innerHeight) / 60000)
     }
 
     const initializePetals = () => {

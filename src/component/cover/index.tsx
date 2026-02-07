@@ -8,40 +8,24 @@ import {
 import { COVER_IMAGE } from "../../images"
 import { LazyDiv } from "../lazyDiv"
 
-const DAY_OF_WEEK = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-]
-
 export const Cover = () => {
   return (
     <LazyDiv className="card cover">
-      <div className="wedding-date">
-        {WEDDING_DATE.format("YYYY")}
-        <div className="divider" />
-        {WEDDING_DATE.format("MM")}
-        <div className="divider" />
-        {WEDDING_DATE.format("DD")}
-      </div>
-      <div className="wedding-day-of-week">
-        {DAY_OF_WEEK[WEDDING_DATE.day()]}
+      <div className="cover-top">
+        <div className="ornament-line" />
+        <div className="wedding-label">Wedding Invitation</div>
+        <div className="ornament-line" />
       </div>
       <div className="image-wrapper">
-        <img src={COVER_IMAGE} alt="sample" />
+        <img src={COVER_IMAGE} alt="wedding" />
       </div>
-      <div className="subtitle">Save the date for the wedding of</div>
-      <div className="names">
-        {GROOM_FULLNAME}
-        <div className="divider" />
-        {BRIDE_FULLNAME}
+      <div className="couple-names">
+        {GROOM_FULLNAME} <span className="ampersand">&amp;</span> {BRIDE_FULLNAME}
       </div>
-      <div className="info">{WEDDING_DATE.format(WEDDING_DATE_FORMAT)}</div>
-      <div className="info">{LOCATION}</div>
+      <div className="wedding-info">
+        <div className="info">{WEDDING_DATE.format(WEDDING_DATE_FORMAT)}</div>
+        <div className="info">{LOCATION}</div>
+      </div>
     </LazyDiv>
   )
 }

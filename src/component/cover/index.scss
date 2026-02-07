@@ -1,58 +1,65 @@
 .cover {
-  .wedding-date {
-    margin-top: 2rem;
-    font-size: 1.5rem;
+  .cover-top {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
-    .divider {
-      background-color: var(--dark-color);
-      width: 1px;
-      height: 0.7rem;
-    }
-  }
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
 
-  .wedding-day-of-week {
-    font-size: 1.2rem;
-    opacity: 0.7;
-    margin-bottom: 1rem;
+    .ornament-line {
+      width: 3rem;
+      height: 1px;
+      background-color: var(--accent-gold);
+    }
+
+    .wedding-label {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.3rem;
+      color: var(--accent-gold);
+      letter-spacing: 0.15em;
+    }
   }
 
   .image-wrapper {
     width: 100%;
-    height: 30rem;
+    height: 28rem;
     overflow: hidden;
     display: flex;
     align-items: center;
+    border: 1px solid var(--light-grey-color);
+
     img {
       width: 100%;
       height: auto;
     }
   }
 
-  .subtitle {
-    font-size: 1.5rem;
-    font-family: "Allura";
-    color: var(--alt-color);
-    margin-top: 1rem;
-  }
+  .couple-names {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.15em;
 
-  .names {
-    margin-top: 0.5rem;
-    margin-bottom: 0.8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.7rem;
-    .divider {
-      background-color: var(--dark-color);
-      width: 1px;
-      height: 0.7rem;
+    .ampersand {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--accent-gold);
+      font-size: 1.6rem;
+      margin: 0 0.4rem;
     }
   }
-  .info {
-    margin-bottom: 0.3rem;
-    opacity: 0.7;
+
+  .wedding-info {
+    margin-bottom: 1.5rem;
+
+    .info {
+      margin-bottom: 0.3rem;
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
   }
 }

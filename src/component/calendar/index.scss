@@ -27,35 +27,25 @@
 
         > span {
           z-index: 1;
+          color: var(--white-color);
         }
 
         > div.heart {
-          width: 50%;
-          height: 50%;
-          background: var(--theme-bg-color);
-          top: 35%;
-          left: 25%;
+          width: 70%;
+          height: 70%;
+          background: var(--theme-color);
+          top: 15%;
+          left: 15%;
           position: absolute;
-          transform: rotate(45deg);
+          border-radius: 50%;
+          transform: none;
           z-index: 0;
+          opacity: 0.85;
           &::before {
-            content: "";
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: -50%;
-            left: 0%;
-            border-radius: 50%;
-            background: var(--theme-bg-color);
+            display: none;
           }
           &::after {
-            content: "";
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            left: -50%;
-            border-radius: 50%;
-            background: var(--theme-bg-color);
+            display: none;
           }
         }
       }

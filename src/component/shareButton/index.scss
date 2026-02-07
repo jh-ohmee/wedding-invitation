@@ -4,6 +4,13 @@
     z-index: 3;
     font-size: 0.8rem;
     display: inline-block;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+
     img {
       width: 0.7rem;
       height: 0.7rem;
