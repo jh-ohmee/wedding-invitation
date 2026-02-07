@@ -1,0 +1,129 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1770430484312,
+  "projectRoot": "/Users/jh0927/wedding-invitation",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "react",
+        "version": "19.2.1",
+        "category": "frontend"
+      },
+      {
+        "name": "react-dom",
+        "version": "19.2.1",
+        "category": "frontend"
+      },
+      {
+        "name": "vite",
+        "version": "7.0.4",
+        "category": "build"
+      }
+    ],
+    "packageManager": "npm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "npm run build",
+    "testCommand": null,
+    "lintCommand": "npm run lint",
+    "devCommand": "npm run dev",
+    "scripts": {
+      "dev": "vite",
+      "build": "vite build",
+      "lint": "eslint .",
+      "preview": "vite preview"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": "ES modules",
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "public",
+      "src"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "build": {
+      "path": "build",
+      "purpose": "Build output",
+      "fileCount": 7,
+      "lastAccessed": 1770430484300,
+      "keyFiles": [
+        "favicon.ico",
+        "font.css",
+        "index.html",
+        "logo192.png",
+        "logo512.png"
+      ]
+    },
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 6,
+      "lastAccessed": 1770430484300,
+      "keyFiles": [
+        "favicon.ico",
+        "font.css",
+        "logo192.png",
+        "logo512.png",
+        "manifest.json"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 6,
+      "lastAccessed": 1770430484302,
+      "keyFiles": [
+        "App.scss",
+        "App.tsx",
+        "const.ts",
+        "env.ts",
+        "index.tsx"
+      ]
+    },
+    "build/assets": {
+      "path": "build/assets",
+      "purpose": "Static assets",
+      "fileCount": 16,
+      "lastAccessed": 1770430484302,
+      "keyFiles": [
+        "cover-gAaBehMA.png",
+        "image1-IJmCIghb.png",
+        "image10-O4tnRHvJ.png"
+      ]
+    }
+  },
+  "hotPaths": [],
+  "userDirectives": []
+}

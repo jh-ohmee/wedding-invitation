@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react"
-import { useKakao, useNaver } from "../store"
-import nmapIcon from "../../icons/nmap-icon.png"
+import { useKakao, useKakaoMaps } from "../store"
 import knaviIcon from "../../icons/knavi-icon.png"
 import tmapIcon from "../../icons/tmap-icon.png"
 import LockIcon from "../../icons/lock-icon.svg?react"
@@ -8,17 +7,16 @@ import UnlockIcon from "../../icons/unlock-icon.svg?react"
 import {
   KMAP_PLACE_ID,
   LOCATION,
-  NMAP_PLACE_ID,
   WEDDING_HALL_POSITION,
 } from "../../const"
-import { NAVER_MAP_CLIENT_ID } from "../../env"
+import { KAKAO_SDK_JS_KEY } from "../../env"
 
 export const Map = () => {
-  return NAVER_MAP_CLIENT_ID ? <NaverMap /> : <div>Map is not available</div>
+  return KAKAO_SDK_JS_KEY ? <KakaoMap /> : <div>Map is not available</div>
 }
 
-const NaverMap = () => {
-  const naver = useNaver()
+const KakaoMap = () => {
+  const kakaoMaps = useKakaoMaps()
   const kakao = useKakao()
   const ref = useRef<HTMLDivElement>(null)
   const [locked, setLocked] = useState(true)
@@ -37,19 +35,16 @@ const NaverMap = () => {
   }
 
   useEffect(() => {
-    if (naver) {
-      const map = new naver.maps.Map(ref.current, {
-        center: WEDDING_HALL_POSITION,
-        zoom: 17,
+    if (kakaoMaps) {
+      const position = new kakaoMaps.LatLng(WEDDING_HALL_POSITION[1], WEDDING_HALL_POSITION[0])
+      const map = new kakaoMaps.Map(ref.current, {
+        center: position,
+        level: 3,
       })
 
-      new naver.maps.Marker({ position: WEDDING_HALL_POSITION, map })
-
-      return () => {
-        map.destroy()
-      }
+      new kakaoMaps.Marker({ position, map })
     }
-  }, [naver])
+  }, [kakaoMaps])
 
   return (
     <>
@@ -107,32 +102,10 @@ const NaverMap = () => {
             switch (checkDevice()) {
               case "ios":
               case "android":
-                window.open(`nmap://place?id=${NMAP_PLACE_ID}`, "_self")
-                break
-              default:
                 window.open(
-                  `https://map.naver.com/p/entry/place/${NMAP_PLACE_ID}`,
-                  "_blank",
+                  `kakaomap://look?p=${WEDDING_HALL_POSITION[1]},${WEDDING_HALL_POSITION[0]}`,
+                  "_self",
                 )
-                break
-            }
-          }}
-        >
-          <img src={nmapIcon} alt="naver-map-icon" />
-          네이버 지도
-        </button>
-        <button
-          onClick={() => {
-            switch (checkDevice()) {
-              case "ios":
-              case "android":
-                if (kakao)
-                  kakao.Navi.start({
-                    name: LOCATION,
-                    x: WEDDING_HALL_POSITION[0],
-                    y: WEDDING_HALL_POSITION[1],
-                    coordType: "wgs84",
-                  })
                 break
               default:
                 window.open(
@@ -143,8 +116,8 @@ const NaverMap = () => {
             }
           }}
         >
-          <img src={knaviIcon} alt="kakao-navi-icon" />
-          카카오 내비
+          <img src={knaviIcon} alt="kakao-map-icon" />
+          카카오맵
         </button>
         <button
           onClick={() => {
